@@ -35,7 +35,7 @@
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
       // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
       function sumNumsFor(nums) {
-        let sum = 0;
+        // let sum = 0;
         // let result;
         // console.log("nums", nums);
         // console.log('result', result)
@@ -60,7 +60,7 @@
         // }
         // return result;
         // }
-      }
+      } // 1
 
       // 👉 CHALLENGE 2
       // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
@@ -70,7 +70,7 @@
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
       function stripVowels(str) {
         const arr = str.split("");
-        console.log("split", arr);
+        console.log("split", arr); // ✔️
 
         for (let i = 0; i < arr.at(-1); i++) {
           if (
@@ -80,14 +80,12 @@
             arr[i] === "o" ||
             arr[i] === "u"
           ) {
-            console.log("i", i);
-            // return i;
-          } else {
-            console.log("join", arr.join(""));
-            return arr.join("");
+            const join = arr.slice(-1);
+            console.log("join", join);
+            // return join;
           }
         }
-      }
+      } // 2
 
       // 👉 CHALLENGE 3
       // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
@@ -95,13 +93,13 @@
       // sumNumsWhile([1, 2, 3]) // should return 6
       // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
       function sumNumsWhile(nums) {
-        // let i = 0;
-        // while (i < nums.length - 1) {
-        //   console.log('sum', sum)
-        //   i+=
-        // }
+        let i = 0;
+        while (i < nums.length - 1) {
+          // console.log("sum", sum);
+          // i+=
+        }
         // console.log("while sum", sum);
-      }
+      } // 3
 
       // 👉 CHALLENGE 4
       // 🧠 The function fightMonsters takes an integer (lifePoints) as its argument, and returns a string.
