@@ -35,31 +35,20 @@
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
       // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
       function sumNumsFor(nums) {
-        // let sum = 0;
-        // let result;
-        // console.log("nums", nums);
-        // console.log('result', result)
-        // if (nums.length === 0) {
-        //   return 0;
-        // }
-        // for (let i in nums) {
-        //   if (nums.length === 0) {
-        //     console.log('zero', nums[i]);
-        //     return 0;
-        //   } else if (nums[i] === 13) {
-        //     console.log('superstitious', nums[i]);
-        //     return "I'm too superstitious!";
-        //   }
-        // else if (!isNaN(nums[i])) {
-        //   console.log('NaN', nums[i]);
-        //   sum += nums[i];
-        // }
-        // else {
-        //   console.log(sum += nums[i]);
-        //   return sum;
-        // }
-        // return result;
-        // }
+        let sum = 0;
+        console.log("sumNumsFor", nums);
+        for (let i in nums) {
+          if (nums == false) {
+            console.log("zero", nums[i]);
+            return 0;
+          } else if (nums[i] === 13) {
+            console.log("superstitious", nums[i]);
+            return "I'm too superstitious!";
+          } else {
+            console.log(("sum1", (sum += nums[i])));
+            return (sum += nums[i]);
+          }
+        }
       } // 1
 
       // 👉 CHALLENGE 2
@@ -73,14 +62,17 @@
         console.log("split", arr); // ✔️
 
         for (let i = 0; i < arr.at(-1); i++) {
+          console.log("at", arr.at(i));
+          const join = arr.slice(-1);
+
           if (
-            arr[i] === "a" ||
-            arr[i] === "e" ||
-            arr[i] === "i" ||
-            arr[i] === "o" ||
-            arr[i] === "u"
+            arr.at(i) === "a" ||
+            arr.at(i) === "e" ||
+            arr.at(i) === "i" ||
+            arr.at(i) === "o" ||
+            arr.at(i) === "u"
           ) {
-            const join = arr.slice(-1);
+            console.log("true");
             console.log("join", join);
             // return join;
           }
@@ -94,11 +86,22 @@
       // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
       function sumNumsWhile(nums) {
         let i = 0;
-        let sum;
+        let sum = 0;
+
         while (i < nums.at(-1)) {
-          // console.log("sum", sum);
+          let number = nums[i];
+
+          if (nums == false) {
+            return 0;
+          } else if (nums[i] === 13) {
+            console.log("superstitious", number);
+            return "I'm too superstitious!";
+          } else {
+            sum += number;
+            console.log("sum+", sum);
+            return sum;
+          }
           i++;
-          console.log("num", nums[i]);
         }
       } // 3
 
@@ -119,7 +122,11 @@
       // 🧠 There are many ways to solve this, but practice using a while loop.
       // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
       // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-      function fightMonsters() {}
+      function fightMonsters(lifePoints) {
+        // for (let points = lifePoints.length - 1; points > -1; points--) {
+        //   console.log("lifePoints", lifePoints[points]);
+        // }
+      }
 
       // 👉 CHALLENGE 5
       // 🧠 The function findEvenNums takes an array of integers as its argument.
