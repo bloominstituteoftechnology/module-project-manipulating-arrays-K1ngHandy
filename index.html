@@ -65,26 +65,25 @@
       // ❗ Notes:
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
       function stripVowels(str) {
-        const arr = str.split("");
-        // console.log("split", arr); // ✔️
+        let split = str.split("");
+        console.log("split...", split); // ✔️
 
-        for (let i = 0; i < arr.at(-1); i++) {
-          let at = arr.at(i);
+        for (let i = 0; i < split.at(-1); i++) {
+          let idx = split[i];
+          console.log("for loop...", idx);
 
-          if (
-            at === "a" ||
-            at === "e" ||
-            at === "i" ||
-            at === "o" ||
-            at === "u"
-          ) {
-            let popped = at.pop();
-            console.log("popped", popped);
-            continue;
-          } else {
-            console.log("else", at);
-            return at;
-          }
+          // if (true) {
+          //   console.log("index...", idx);
+          // }
+
+          //   // let popped = idx.pop();
+          //   // console.log("popped", popped);
+          //   // continue;
+          // } else {
+          //   console.log("else", idx);
+          //   // return idx;
+          // }
+          // return popped;
         }
       } // 2
 
