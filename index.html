@@ -42,6 +42,7 @@
           return 0;
         } else {
           for (let i = 0; i < nums.at(-1); i++) {
+            // (start, end, increment)
             if (nums[i] === 13) {
               // console.log("suspicious", nums); // ✔️
               return "I'm too superstitious!";
@@ -49,7 +50,7 @@
               // console.log("NaN", nums[i]); // ✔️
               continue;
             } else {
-              sum += nums[i];
+              sum += nums[i]; // Add to sum
               // console.log("sum", sum); // ✔️
             }
           }
@@ -96,20 +97,22 @@
         let i = 0;
         let sum = 0;
 
-        while (i < numbers.at(-1)) {
-          let number = numbers[i];
+        if (numbers == false) {
+          return 0;
+        } else {
+          while (i < numbers.at(-1)) {
+            let index = numbers[i];
 
-          if (!numbers.at()) {
-            return 0;
-          } else if (number === 13) {
-            console.log("superstitious", number);
-            return "I'm too superstitious!";
-          } else {
-            sum += number;
-            // console.log("sum+", sum);
-            return sum;
+            if (typeof index === "number") {
+              if (index === 13) {
+                return "I'm too superstitious!";
+              } else {
+                sum += index;
+              }
+            }
+            i++; // increment
           }
-          i++;
+          return sum;
         }
       } // 3
 
