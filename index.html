@@ -36,18 +36,24 @@
       // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
       function sumNumsFor(nums) {
         let sum = 0;
-        console.log("sumNumsFor", nums);
-        for (let i in nums) {
-          if (nums == false) {
-            console.log("zero", nums[i]);
-            return 0;
-          } else if (nums[i] === 13) {
-            console.log("superstitious", nums[i]);
-            return "I'm too superstitious!";
-          } else {
-            console.log(("sum1", (sum += nums[i])));
-            return (sum += nums[i]);
+        // console.log("sumNumsFor", nums); // ✔️
+        if (nums == false) {
+          // console.log("zero", nums); // ✔️
+          return 0;
+        } else {
+          for (let i = 0; i < nums.at(-1); i++) {
+            if (nums[i] === 13) {
+              // console.log("suspicious", nums); // ✔️
+              return "I'm too superstitious!";
+            } else if (typeof nums[i] !== "number") {
+              // console.log("NaN", nums[i]); // ✔️
+              continue;
+            } else {
+              sum += nums[i];
+              // console.log("sum", sum); // ✔️
+            }
           }
+          return sum;
         }
       } // 1
 
@@ -59,22 +65,24 @@
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
       function stripVowels(str) {
         const arr = str.split("");
-        console.log("split", arr); // ✔️
+        // console.log("split", arr); // ✔️
 
         for (let i = 0; i < arr.at(-1); i++) {
-          console.log("at", arr.at(i));
-          const join = arr.slice(-1);
+          let at = arr.at(i);
 
           if (
-            arr.at(i) === "a" ||
-            arr.at(i) === "e" ||
-            arr.at(i) === "i" ||
-            arr.at(i) === "o" ||
-            arr.at(i) === "u"
+            at === "a" ||
+            at === "e" ||
+            at === "i" ||
+            at === "o" ||
+            at === "u"
           ) {
-            console.log("true");
-            console.log("join", join);
-            // return join;
+            let popped = at.pop();
+            console.log("popped", popped);
+            continue;
+          } else {
+            console.log("else", at);
+            return at;
           }
         }
       } // 2
@@ -84,21 +92,21 @@
       // 🧠 Examples of usage:
       // sumNumsWhile([1, 2, 3]) // should return 6
       // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-      function sumNumsWhile(nums) {
+      function sumNumsWhile(numbers) {
         let i = 0;
         let sum = 0;
 
-        while (i < nums.at(-1)) {
-          let number = nums[i];
+        while (i < numbers.at(-1)) {
+          let number = numbers[i];
 
-          if (nums == false) {
+          if (!numbers.at()) {
             return 0;
-          } else if (nums[i] === 13) {
+          } else if (number === 13) {
             console.log("superstitious", number);
             return "I'm too superstitious!";
           } else {
             sum += number;
-            console.log("sum+", sum);
+            // console.log("sum+", sum);
             return sum;
           }
           i++;
