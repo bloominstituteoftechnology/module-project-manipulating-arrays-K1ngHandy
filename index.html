@@ -133,19 +133,19 @@
       // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
       // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
       function fightMonsters(lifePoints) {
-        console.log("starting lifePoints ", lifePoints);
         let round = 1;
         let i = lifePoints;
 
-        console.log("current round ", round);
         while (i > -1) {
-          console.log("lifePoints remaining 1 ", i);
-          if (i < 1) {
-            return `You died in round ${round - 1}`;
-          } else {
+          console.log("Current Round ", round);
+          console.log("Starting LifePoints ", lifePoints);
+          if (i > 0) {
             i -= round;
-            console.log("lifePoints remaining 2 ", i);
+            console.log("LifePoints After ", i);
             round++;
+          } else {
+            console.log("LifePoints End ", i);
+            return `You died in round ${round - 1}`;
           }
         }
       }
