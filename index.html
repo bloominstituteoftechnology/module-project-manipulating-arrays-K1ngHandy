@@ -166,7 +166,21 @@
       // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
       // 🧠 Examples of usage:
       // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
-      function separateAges() {}
+      function separateAges(ages) {
+        const over = [];
+        const under = [];
+        let i = 0;
+
+        while (i < ages.length) {
+          if (ages[i] >= 21) {
+            over.push(ages[i]);
+          } else {
+            under.push(ages[i]);
+          }
+          i++;
+        }
+        return [[...under], [...over]];
+      }
 
       // 👉 CHALLENGE 7
       // 🧠 The function headAndTail takes an array as its argument.
