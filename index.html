@@ -137,14 +137,14 @@
         let i = lifePoints;
 
         while (i > -1) {
-          console.log("Current Round ", round);
-          console.log("Starting LifePoints ", lifePoints);
+          // console.log("Current Round ", round);
+          // console.log("Starting LifePoints ", lifePoints);
           if (i > 0) {
             i -= round;
-            console.log("LifePoints After ", i);
+            // console.log("LifePoints After ", i);
             round++;
           } else {
-            console.log("LifePoints End ", i);
+            // console.log("LifePoints End ", i);
             return `You died in round ${round - 1}`;
           }
         }
@@ -157,7 +157,19 @@
       // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
       // ❗ Notes:
       // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
-      function findEvenNums() {}
+      function findEvenNums(intArr) {
+        const evenArr = [];
+
+        for (let i = 0; i < intArr.at(-1); i++) {
+          console.log(intArr);
+          if (intArr[i] % 2 === 0) {
+            evenArr.push(intArr[i]);
+          } else {
+            continue;
+          }
+        }
+        return evenArr;
+      }
 
       // 👉 CHALLENGE 6
       // 🧠 The function separateAges takes an array of integers (ages) as its argument.
