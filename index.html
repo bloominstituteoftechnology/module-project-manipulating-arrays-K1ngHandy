@@ -206,40 +206,39 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
+        console.log("strings", strings);
+        let newArr = [];
+        let capitalized = [];
+
         for (let i = 0; i < strings.length; i++) {
           // loop strings array
-          console.log("original", strings);
-          let newArr = [];
-          let capitalized = [];
+          let index = strings[i];
 
-          for (let i = 0; i < strings.length; i++) {
+          for (let i = 0; i < index.length; i++) {
             // loop for each string
-            let index = strings[i];
-            console.log(index);
+            let idx = index[i];
+            console.log("index", index);
 
-            for (let i = 0; i < index.length; i++) {
-              // loop for each character
-              let idx = index[i];
-
-              if (
-                (idx === "a" ||
-                  idx === "e" ||
-                  idx === "i" ||
-                  idx === "o" ||
-                  idx === "u") === true
-              ) {
-                idx = idx.toUpperCase();
-                newArr.push(idx);
-              } else {
-                newArr.push(idx);
-              }
-              console.log("newArr", newArr);
+            if (
+              (idx === "a" ||
+                idx === "e" ||
+                idx === "i" ||
+                idx === "o" ||
+                idx === "u") === true
+            ) {
+              idx = idx.toUpperCase();
+              newArr.push(idx);
+            } else {
+              newArr.push(idx);
             }
-            const rejoin = newArr.join("");
-            console.log("rejoin string", rejoin);
-            return rejoin;
+            console.log("newArr", newArr);
           }
+          const rejoin = newArr.join("");
+          console.log("rejoin string", rejoin);
+          return rejoin;
         }
+        const finalJoin = capitalized.push(rejoin);
+        console.log("finalJoin", finalJoin);
       }
 
       // 👉 CHALLENGE 9
@@ -252,7 +251,19 @@
       // ❗ Notes:
       // 🧠 Practice using pop and slice.
       // 🧠 Note that pop modifies the original array in place and returns the "popped" element, whereas slice gives us a brand new array.
-      function crazyTrimmer(arr) {}
+      function crazyTrimmer(arr) {
+        console.log("original", arr);
+        if (arr.length % 2 === 0) {
+          arr.pop();
+          return arr;
+          console.log("arrPop", arr);
+        } else {
+          arr.shift();
+          arr.pop();
+          console.log("unshift", arr);
+          return arr;
+        }
+      }
 
       // 🧪 TESTS, do not work below this line
       // 🧪 TESTS, do not work below this line
