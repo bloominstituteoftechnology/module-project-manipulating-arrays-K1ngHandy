@@ -66,25 +66,22 @@
       // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
       function stripVowels(str) {
         let split = str.split("");
-        // console.log("split...", split); // ✔️
+        const noLowercase = [];
 
-        for (let i = 0; i < split.at(-1); i++) {
-          let idx = split[i];
-          console.log("for loop...", idx);
+        for (let i = 0; i < split.length; i++) {
+          const idx = split[i];
 
-          // if (true) {
-          //   console.log("index...", idx);
-          // }
-
-          //   // let popped = idx.pop();
-          //   // console.log("popped", popped);
-          //   // continue;
-          // } else {
-          //   console.log("else", idx);
-          //   // return idx;
-          // }
-          // return popped;
+          if (
+            (idx === "a" ||
+              idx === "e" ||
+              idx === "i" ||
+              idx === "o" ||
+              idx === "u") === false
+          ) {
+            noLowercase.push(idx);
+          }
         }
+        return noLowercase.join("");
       } // 2
 
       // 👉 CHALLENGE 3
@@ -99,7 +96,7 @@
         if (numbers == false) {
           return 0;
         } else {
-          while (i < numbers.at(-1)) {
+          while (i < numbers.length) {
             let index = numbers[i];
 
             if (typeof index === "number") {
