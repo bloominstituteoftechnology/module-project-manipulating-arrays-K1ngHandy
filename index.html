@@ -36,22 +36,16 @@
       // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
       function sumNumsFor(nums) {
         let sum = 0;
-        // console.log("sumNumsFor", nums); // ✔️
         if (nums == false) {
-          // console.log("zero", nums); // ✔️
           return 0;
         } else {
           for (let i = 0; i < nums.at(-1); i++) {
-            // (start, end, increment)
             if (nums[i] === 13) {
-              // console.log("suspicious", nums); // ✔️
               return "I'm too superstitious!";
             } else if (typeof nums[i] !== "number") {
-              // console.log("NaN", nums[i]); // ✔️
               continue;
             } else {
               sum += nums[i]; // Add to sum
-              // console.log("sum", sum); // ✔️
             }
           }
           return sum;
