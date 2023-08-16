@@ -207,23 +207,37 @@
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
         for (let i = 0; i < strings.length; i++) {
-          console.log(strings);
-          const splits = strings[i].split("");
-          console.log(splits);
+          // loop strings array
+          console.log("original", strings);
+          let newArr = [];
+          let capitalized = [];
 
-          for (let i = 0; i < splits.length; i++) {
-            let index = splits[i];
-            if (
-              (index === "a" ||
-                index === "e" ||
-                index === "i" ||
-                index === "o" ||
-                index === "u") === true
-            ) {
-              index = index.toUpperCase();
-              console.log("uppercase", index);
+          for (let i = 0; i < strings.length; i++) {
+            // loop for each string
+            let index = strings[i];
+            console.log(index);
+
+            for (let i = 0; i < index.length; i++) {
+              // loop for each character
+              let idx = index[i];
+
+              if (
+                (idx === "a" ||
+                  idx === "e" ||
+                  idx === "i" ||
+                  idx === "o" ||
+                  idx === "u") === true
+              ) {
+                idx = idx.toUpperCase();
+                newArr.push(idx);
+              } else {
+                newArr.push(idx);
+              }
+              console.log("newArr", newArr);
             }
-            return splits.join("");
+            const rejoin = newArr.join("");
+            console.log("rejoin string", rejoin);
+            return rejoin;
           }
         }
       }
