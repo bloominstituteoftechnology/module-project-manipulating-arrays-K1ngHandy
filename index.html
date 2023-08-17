@@ -125,21 +125,17 @@
       // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
       function fightMonsters(lifePoints) {
         let round = 1;
-        let i = lifePoints;
 
-        while (i > -1) {
-          // console.log("Current Round ", round);
-          // console.log("Starting LifePoints ", lifePoints);
-          if (i > 0) {
-            i -= round;
-            // console.log("LifePoints After ", i);
-            round++;
+        while (lifePoints > 0) {
+          if (lifePoints > round) {
+            lifePoints -= round;
           } else {
-            // console.log("LifePoints End ", i);
-            return `You died in round ${round - 1}`;
+            return `You died in round ${round}`;
           }
+          round++;
         }
       }
+      // }
 
       // 👉 CHALLENGE 5
       // 🧠 The function findEvenNums takes an array of integers as its argument.
@@ -206,7 +202,7 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
-        console.log("strings", strings);
+        // console.log("strings", strings);
         let newArr = [];
         let capitalized = [];
 
@@ -217,7 +213,7 @@
           for (let i = 0; i < index.length; i++) {
             // loop for each string
             let idx = index[i];
-            console.log("index", index);
+            // console.log("index", index);
 
             if (
               (idx === "a" ||
@@ -231,14 +227,14 @@
             } else {
               newArr.push(idx);
             }
-            console.log("newArr", newArr);
+            // console.log("newArr", newArr);
           }
           const rejoin = newArr.join("");
-          console.log("rejoin string", rejoin);
+          // console.log("rejoin string", rejoin);
           return rejoin;
         }
         const finalJoin = capitalized.push(rejoin);
-        console.log("finalJoin", finalJoin);
+        // console.log("finalJoin", finalJoin);
       }
 
       // 👉 CHALLENGE 9
@@ -252,15 +248,12 @@
       // 🧠 Practice using pop and slice.
       // 🧠 Note that pop modifies the original array in place and returns the "popped" element, whereas slice gives us a brand new array.
       function crazyTrimmer(arr) {
-        console.log("original", arr);
         if (arr.length % 2 === 0) {
-          arr.pop();
+          arr.pop(); // remove last element
           return arr;
-          console.log("arrPop", arr);
         } else {
-          arr.shift();
+          arr.shift(); // remove first element
           arr.pop();
-          console.log("unshift", arr);
           return arr;
         }
       }
