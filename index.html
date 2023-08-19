@@ -200,10 +200,10 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
-        let newArr = [];
-
         for (let i = 0; i < strings.length; i++) {
           // loop strings array
+          let newArr = [];
+          let capitalized = [];
           console.log("strings...", strings);
           const str = strings[i];
           // console.log("str[i] ...", str);
@@ -212,8 +212,6 @@
             // loop for each string
             let split = str.split("");
             console.log("split...", split);
-            // for (let i = 0; i < split.length; i++) {
-            // console.log('split[i]...', split[i]);
             if (
               (split[i] === "a" ||
                 split[i] === "e" ||
@@ -234,7 +232,7 @@
             console.log("rejoin string", rejoin);
             // return rejoin;
           }
-        }
+        } // Need to push rejoin strings to capitalized array **
       }
 
       // 👉 CHALLENGE 9
