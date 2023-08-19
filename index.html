@@ -63,16 +63,14 @@
         const noLowercase = [];
 
         for (let i = 0; i < split.length; i++) {
-          const idx = split[i];
-
           if (
-            (idx === "a" ||
-              idx === "e" ||
-              idx === "i" ||
-              idx === "o" ||
-              idx === "u") === false
+            (split[i] === "a" ||
+              split[i] === "e" ||
+              split[i] === "i" ||
+              split[i] === "o" ||
+              split[i] === "u") === false
           ) {
-            noLowercase.push(idx);
+            noLowercase.push(split[i]);
           }
         }
         return noLowercase.join("");
@@ -202,39 +200,41 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
-        // console.log("strings", strings);
         let newArr = [];
-        let capitalized = [];
 
         for (let i = 0; i < strings.length; i++) {
           // loop strings array
-          let index = strings[i];
+          console.log("strings...", strings);
+          const str = strings[i];
+          // console.log("str[i] ...", str);
 
-          for (let i = 0; i < index.length; i++) {
+          for (let i = 0; i < str.length; i++) {
             // loop for each string
-            let idx = index[i];
-            // console.log("index", index);
-
+            let split = str.split("");
+            console.log("split...", split);
+            // for (let i = 0; i < split.length; i++) {
+            // console.log('split[i]...', split[i]);
             if (
-              (idx === "a" ||
-                idx === "e" ||
-                idx === "i" ||
-                idx === "o" ||
-                idx === "u") === true
+              (split[i] === "a" ||
+                split[i] === "e" ||
+                split[i] === "i" ||
+                split[i] === "o" ||
+                split[i] === "u") === true
             ) {
-              idx = idx.toUpperCase();
-              newArr.push(idx);
+              const uppercase = split[i].toUpperCase();
+              console.log("Uppercase...", uppercase);
+              newArr.push(uppercase);
             } else {
-              newArr.push(idx);
+              console.log("No change", split[i]);
+              newArr.push(split[i]);
             }
-            // console.log("newArr", newArr);
+            console.log("New Arr...", newArr);
+
+            const rejoin = newArr.join("");
+            console.log("rejoin string", rejoin);
+            // return rejoin;
           }
-          const rejoin = newArr.join("");
-          // console.log("rejoin string", rejoin);
-          return rejoin;
         }
-        const finalJoin = capitalized.push(rejoin);
-        // console.log("finalJoin", finalJoin);
       }
 
       // 👉 CHALLENGE 9
