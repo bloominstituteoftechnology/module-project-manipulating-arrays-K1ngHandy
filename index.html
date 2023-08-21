@@ -205,10 +205,7 @@
         for (let i = 0; i < strings.length; i++) {
           // loop strings array
           let split = strings[i].split("");
-          // console.log("split...", split);
-          // console.log("split i...", split[i]);
           let capitalizedArr = [];
-          let capitalizedStr = capitalizedArr.toString();
 
           for (let i = 0; i < split.length; i++) {
             let result;
@@ -227,6 +224,11 @@
             }
           }
           console.log("capitalizedArr...", capitalizedArr);
+          let join = capitalizedArr.join("");
+
+          let capitalizedStr = join.toString();
+          console.log("cap string...", capitalizedStr);
+          return capitalizedStr;
         }
       }
 
