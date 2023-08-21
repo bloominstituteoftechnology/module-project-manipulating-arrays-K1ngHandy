@@ -200,18 +200,19 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
+        // console.log("strings...", strings);
+
         for (let i = 0; i < strings.length; i++) {
           // loop strings array
-          let newArr = [];
-          let capitalized = [];
-          console.log("strings...", strings);
-          const str = strings[i];
-          // console.log("str[i] ...", str);
+          let split = strings[i].split("");
+          // console.log("split...", split);
+          // console.log("split i...", split[i]);
+          let capitalizedArr = [];
+          let capitalizedStr = capitalizedArr.toString();
 
-          for (let i = 0; i < str.length; i++) {
-            // loop for each string
-            let split = str.split("");
-            console.log("split...", split);
+          for (let i = 0; i < split.length; i++) {
+            let result;
+
             if (
               (split[i] === "a" ||
                 split[i] === "e" ||
@@ -220,19 +221,13 @@
                 split[i] === "u") === true
             ) {
               const uppercase = split[i].toUpperCase();
-              console.log("Uppercase...", uppercase);
-              newArr.push(uppercase);
+              result = capitalizedArr.push(uppercase);
             } else {
-              console.log("No change", split[i]);
-              newArr.push(split[i]);
+              result = capitalizedArr.push(split[i]);
             }
-            console.log("New Arr...", newArr);
-
-            const rejoin = newArr.join("");
-            console.log("rejoin string", rejoin);
-            // return rejoin;
           }
-        } // Need to push rejoin strings to capitalized array **
+          console.log("capitalizedArr...", capitalizedArr);
+        }
       }
 
       // 👉 CHALLENGE 9
