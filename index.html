@@ -200,36 +200,32 @@
       // ❗ Notes:
       // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
       function nestedLoops(strings) {
-        // console.log("strings...", strings);
+        let cap = []; // final return array
 
-        for (let i = 0; i < strings.length; i++) {
+        for (let i in strings) {
           // loop strings array
-          let split = strings[i].split("");
-          let capitalizedArr = [];
+          let capitalizedArr = []; // array after initial capitalization
 
-          for (let i = 0; i < split.length; i++) {
-            let result;
+          for (let j of strings[i]) {
+            // loop each character of string
 
             if (
-              (split[i] === "a" ||
-                split[i] === "e" ||
-                split[i] === "i" ||
-                split[i] === "o" ||
-                split[i] === "u") === true
+              (j === "a" ||
+                j === "e" ||
+                j === "i" ||
+                j === "o" ||
+                j === "u") === true
             ) {
-              const uppercase = split[i].toUpperCase();
-              result = capitalizedArr.push(uppercase);
+              const uppercase = j.toUpperCase();
+              capitalizedArr.push(uppercase);
             } else {
-              result = capitalizedArr.push(split[i]);
+              capitalizedArr.push(j);
             }
           }
-          console.log("capitalizedArr...", capitalizedArr);
-          let join = capitalizedArr.join("");
-
-          let capitalizedStr = join.toString();
-          console.log("cap string...", capitalizedStr);
-          return capitalizedStr;
+          let join = capitalizedArr.join(""); // Rejoins string in capitalizedArr
+          cap.push(join); // Push joined string to cap array
         }
+        return cap;
       }
 
       // 👉 CHALLENGE 9
